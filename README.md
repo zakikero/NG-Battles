@@ -34,6 +34,7 @@ Ce projet est un code de départ pour un site Web fait avec le cadriciel (_frame
 
 Vous pouvez ajouter, modifier ou supprimer des composants selon vos besoins. **Important** : retirez le code de départ qui n'est pas nécessaire pour votre projet. Au besoin, vous pouvez toujours vous référer à ce code dans des anciens commits git pour voir comment faire certaines choses.
 
+
 ## Développement local
 
 Lorsque la commande `npm start` est lancée dans le dossier _/client_, le script suivant (disponible dans `package.json`) est exécuté : `ng serve --open` qu exécute les 2 étapes suivantes :
@@ -158,44 +159,44 @@ Référez-vous au fichier `eslintrc.json` pour les règles spécifiques.
 
 ## Conventions de nommage et de langue
 
--   Utilisez le ALL_CAPS pour les constantes.
--   Utilisez le PascalCase pour les noms de types et les valeurs d'énumérations.
--   Utilisez le camelCase pour les noms de fonctions, de propriétés et de variables.
--   Utilisez le kebab-case pour les noms de balises des composants Angular.
--   Évitez les abréviations dans les noms de variables ou de fonctions.
--   Un tableau/liste/dictionnaire devrait avoir un nom indiquant qu'il contient plusieurs objets, par exemple "Letters".
--   Évitez de mettre le type de l'objet dans le nom, par exemple on préfère "Items" à "ListOfItems" lorsqu'on déclare une liste.
--   Un objet ne devrait pas avoir un nom qui porte à croire qu'il s'agit d'un tableau.
+- Utilisez le ALL_CAPS pour les constantes.
+- Utilisez le PascalCase pour les noms de types et les valeurs d'énumérations.
+- Utilisez le camelCase pour les noms de fonctions, de propriétés et de variables.
+- Utilisez le kebab-case pour les noms de balises des composants Angular.
+- Évitez les abréviations dans les noms de variables ou de fonctions.
+- Un tableau/liste/dictionnaire devrait avoir un nom indiquant qu'il contient plusieurs objets, par exemple "Letters".
+- Évitez de mettre le type de l'objet dans le nom, par exemple on préfère "Items" à "ListOfItems" lorsqu'on déclare une liste.
+- Un objet ne devrait pas avoir un nom qui porte à croire qu'il s'agit d'un tableau.
 
 Vous devez coder dans une langue et une seule. Nous vous recommandons d'écrire votre code en anglais, mais vous êtes libres de coder en français.
 
 ## Autres standards recommandés
 
--   Utilisez **let** et **const**. Lorsque possible, préférez **const**. Évitez **var**.
--   N'utilisez jamais **any**, que ce soit implicitement ou explicitement à moins que ce soit absolument nécessaire (ex: dans un test).
--   Déclarez tous les types de retour des fonctions qui ne retournent pas des primitives.
--   Évitez les fonctions qui ont plus d'une responsabilité.
--   N'utilisez pas de nombres magiques. Utilisez des constantes bien nommées.
--   N'utilisez pas de chaînes de caractères magiques. Créez vos propres constantes avec des noms explicites.
--   **Évitez la duplication de code.**
--   Séparez votre code Typescript du CSS et du HTML. Générez vos component avec Angular CLI qui le fait pour vous.
+- Utilisez **let** et **const**. Lorsque possible, préférez **const**. Évitez **var**.
+- N'utilisez jamais **any**, que ce soit implicitement ou explicitement à moins que ce soit absolument nécessaire (ex: dans un test).
+- Déclarez tous les types de retour des fonctions qui ne retournent pas des primitives.
+- Évitez les fonctions qui ont plus d'une responsabilité.
+- N'utilisez pas de nombres magiques. Utilisez des constantes bien nommées.
+- N'utilisez pas de chaînes de caractères magiques. Créez vos propres constantes avec des noms explicites.
+- **Évitez la duplication de code.**
+- Séparez votre code Typescript du CSS et du HTML. Générez vos component avec Angular CLI qui le fait pour vous.
 
 # Guide de contribution
 
 Pour assurer une collaboration efficace et maintenir la qualité du code tout au long du projet, nous avons mis en place un guide de contribution détaillé. Ce guide couvre les aspects essentiels du processus de développement, notamment :
 
--   Les conventions de nommage des branches
--   Les règles pour les messages de commit
--   Le processus de création et de gestion des Merge Requests (MR)
--   Les bonnes pratiques pour les revues de code
+- Les conventions de nommage des branches
+- Les règles pour les messages de commit
+- Le processus de création et de gestion des Merge Requests (MR)
+- Les bonnes pratiques pour les revues de code
 
 Nous vous invitons fortement à consulter le fichier [CONTRIBUTING.md](./CONTRIBUTING.md) pour plus de détails. Suivre ces directives nous aidera à maintenir un projet bien organisé et facile à comprendre pour tous les membres de l'équipe.
 
 ## Git et gestion des versions
 
--   Gardez, le plus possible, une seule fonctionnalité par branche.
--   Utilisez une branche commune de développement (nommée `dev` ou `develop`) dans laquelle vous intégrez vos modifications. Gardez vos branches de développement à jour avec la branche commune.
--   Les branches doivent avoir une nomenclature standardisée. Voici des exemples :
+- Gardez, le plus possible, une seule fonctionnalité par branche.
+- Utilisez une branche commune de développement (nommée `dev` ou `develop`) dans laquelle vous intégrez vos modifications. Gardez vos branches de développement à jour avec la branche commune.
+- Les branches doivent avoir une nomenclature standardisée. Voici des exemples :
 -   Une branche de fonctionnalité devrait se nommer `feature/nom-du-feature`.
 -   Une branche de correction de bogue devrait se nommer `hotfix/nom-du-bug`.
 
