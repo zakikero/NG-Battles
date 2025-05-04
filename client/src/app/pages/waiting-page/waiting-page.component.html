@@ -1,0 +1,15 @@
+<div class="main-container">
+    <button class="button-style" (click)="leaveRoom()" [routerLink]="['/home']">Retourner au menu</button>
+    <h1>{{ roomId }}</h1>
+    <div id="player-data">
+        <app-player-list (deletePlayerAsAdmin)="deletePlayer($event)" [playerList]="players" [isUserAdmin]="isAdmin"></app-player-list>
+        <app-chat [roomId]="roomId" [characterName]="characterName"></app-chat>
+    </div>
+    <div id="btn-container">
+        @if(isAdmin){
+        <button id="lock-btn" (click)="lockRoom()">Verrouiller</button>
+        <button (click)="startGame()">Debuter</button>
+        <button id="virtual-btn" (click)="addVirtualPlayer()">Ajouter un joueur virtuel</button>
+        }
+    </div>
+</div>

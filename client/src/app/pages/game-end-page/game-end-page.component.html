@@ -1,0 +1,17 @@
+<div class="main-container">
+    <button class="button-style" (click)="leaveRoom()" [routerLink]="['/home']">Retourner au menu</button>
+    <div class="global-stats-chat-container">
+        <div class="player-stats-container">
+            @if (playerList) {
+            <app-player-stats [playerList]="playerList"></app-player-stats>
+            }
+        </div>
+        <div class="global-stats-container">
+            <app-global-stats [globalStats]="globalStats" [gameMode]="gameMode"></app-global-stats>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <app-chat [roomId]="roomId" [characterName]="characterName"></app-chat>
+    </div>
+</div>

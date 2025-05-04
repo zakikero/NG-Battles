@@ -1,0 +1,61 @@
+$font-family: 'MedievalSharp';
+$primary-color: rgb(255, 255, 255);
+$secondary-color: rgb(140, 94, 184);
+$hover-color: #e5c50e;
+$active-color: darkgoldenrod;
+$border-color: black;
+$border-radius: 20px;
+$transition-duration: 0.3s;
+
+p {
+    text-align: center;
+    color: black;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border: 3px solid $border-color;
+    border-radius: $border-radius;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $secondary-color;
+}
+
+.messages-container {
+    display: flex;
+    flex: 1;
+    overflow-y: scroll; 
+    flex-direction: column;
+    justify-content: flex-start; 
+}
+
+.message {
+    display: flex;
+    justify-content: flex-start;
+    color: black;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 4px;
+    margin: 3px;
+    text-wrap: wrap;
+}
+.message-content {
+    word-break: break-word; /* Ensures long words break properly */
+}
+
+#textInput {
+    color: black;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: $secondary-color;
+    font-family: $font-family;
+}
+
+#textInput::placeholder {
+    color: black;
+}

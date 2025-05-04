@@ -1,0 +1,197 @@
+@import url('../../global-files/global.scss');
+
+.main-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: auto;
+    max-width: 100%;
+
+    text-align: center;
+
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+.avatar {
+    height: 100px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.selected {
+    animation: scaleUpDown 0.2s infinite alternate;
+
+    @keyframes scaleUpDown {
+        0% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1.4);
+        }
+    }
+}
+
+.medievalsharp-regular {
+    text-align: center;
+}
+
+h4 {
+    color: white;
+}
+
+.input-name-container {
+    width: 100%;
+    text-align: center;
+}
+
+.name-input {
+    color: white;
+    font-size: 16px;
+    font-family: 'MedievalSharp', sans-serif;
+
+    background-color: #2d2d2d;
+    border: 2px solid #719eb8;
+    border-radius: 25px;
+
+    padding: 10px 15px;
+    margin: 10px 0;
+
+    width: 100%;
+    max-width: 200px;
+    height: 20px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.name-input:invalid {
+    background-color: rgb(144, 47, 47);
+}
+
+.name-input:valid {
+    background-color: #29974c;
+}
+
+.name-input:hover {
+    background-color: #1a1a1a;
+    border-color: #284456;
+}
+
+.name-input::placeholder {
+    color: #7f8c8d;
+}
+
+.character-selection-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.character-list-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 45%;
+}
+
+#character-list {
+    display: flex;
+    gap: 5px;
+    overflow-x: scroll;
+    padding: 10px;
+}
+
+#character-list::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-slider-arrow {
+    cursor: pointer;
+    width: 4%;
+    height: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-slider-arrow:hover {
+    transform: scale(1.08);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.attribute-image {
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.attributes-container {
+    display: flex;
+    justify-content: space-around;
+    height: 5%;
+}
+
+p {
+    margin: 0px;
+}
+
+life-speed-container-wrapper {
+    text-align: center;
+}
+
+.life-speed-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+}
+
+.attack-defense-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.radio-attack-defense-container {
+    text-align: center;
+    width: 300px;
+}
+
+.attribute {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.dice-container::placeholder {
+    font-family: 'MedievalSharp', sans-serif;
+}

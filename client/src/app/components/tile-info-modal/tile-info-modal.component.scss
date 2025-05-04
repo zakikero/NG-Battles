@@ -1,0 +1,37 @@
+.modal-container {
+    padding: 20px;
+    background-image: url('./../../../assets/arcade_background.gif');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: rgb(218, 240, 245);
+    backdrop-filter: blur(5px); // Apply blur to the background image
+}
+
+.tile-info {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: rgba(0, 0, 0, 0.6); // Semi-transparent background
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.tile-info p {
+    margin: 10px 0;
+}
+
+.tile-info p strong {
+    font-weight: bold;
+}
+
+.tile-info h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.tile-info img {
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}

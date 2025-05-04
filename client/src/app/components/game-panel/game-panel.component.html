@@ -1,0 +1,10 @@
+<mat-card class="game-card" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title> {{ this.game }} </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Taille de carte: {{ this.mapSize }} x {{ this.mapSize }}</p>
+        <p>Joueurs actuels: {{ this.nPlayers }}</p>
+        <p>Joueur actif: {{ this.activePlayer.name ? this.activePlayer.name : 'Aucun' }}</p>
+    </mat-card-content>
+</mat-card>

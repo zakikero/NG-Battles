@@ -1,0 +1,143 @@
+@import '../../global-files/global.scss';
+
+.main-container {
+    background-image: url('../../../assets/game-selection-page/dungeon-background-selection-game-page.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+h1,
+p,
+button {
+    font-family: $font-family;
+}
+
+h1 {
+    padding: 1%;
+    font-family: 'MedievalSharp', sans-serif;
+    text-align: center;
+}
+
+app-player-list,
+app-chat {
+    width: 50%;
+    height: 30vw;
+}
+
+#player-data {
+    display: flex;
+    // justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+}
+
+// Button Styles
+button {
+    margin: 10px;
+    padding: 10px;
+    width: 20vw;
+    font-size: 20px;
+    background-color: $secondary-color;
+    border: 3px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition:
+        transform $transition-duration,
+        box-shadow $transition-duration,
+        background-color $transition-duration;
+
+    &:not(:disabled) {
+        &:hover:not(:active) {
+            transform: scale(1.1) rotate(10deg);
+            background-color: $hover-color;
+            box-shadow:
+                0 0 10px $hover-color,
+                0 0 20px $hover-color,
+                0 0 30px $hover-color,
+                0 0 40px $hover-color,
+                0 0 50px $hover-color,
+                0 0 60px $hover-color;
+            animation:
+                wiggle 0.5s ease-in-out infinite,
+                colorChange 1s infinite,
+                pulse 1s infinite,
+                shadowPulse 1s infinite;
+        }
+
+        &:active {
+            transform: scale(0.9);
+            background-color: $active-color;
+            box-shadow: none;
+            animation: none;
+        }
+    }
+
+    &:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+        animation: none;
+    }
+
+    @keyframes colorChange {
+        0% {
+            background-color: $hover-color;
+        }
+        50% {
+            background-color: $active-color;
+        }
+        100% {
+            background-color: $hover-color;
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shadowPulse {
+        0% {
+            box-shadow: 0 0 10px $hover-color;
+        }
+        50% {
+            box-shadow: 0 0 30px $hover-color;
+        }
+        100% {
+            box-shadow: 0 0 10px $hover-color;
+        }
+    }
+}
+
+// Animations
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+#btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

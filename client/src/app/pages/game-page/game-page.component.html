@@ -1,6 +1,118 @@
-<div class="container">
-    <app-sidebar id="sidebar"></app-sidebar>
-    <section class="play-area-container">
-        <app-play-area class="play-area" tabindex="0"></app-play-area>
+<div class="main-container">
+    <section class="game">
+        <section class="game-info">
+            @if (playersInitialized) { @if (!gameController.isInCombat()) {
+            <app-game-panel
+                class="game-card"
+                [playerCoords]="gameController.getPlayerCoords()"
+                [mapSize]="mapSize"
+                [activePlayer]="gameController.activePlayer"
+                [game]="game.gameName"
+                [afklist]="gameController.afklist"
+            >
+            </app-game-panel>
+            <app-player-panel
+                class="player-card"
+                [playerName]="gameController.player.name"
+                [selectedAvatar]="gameController.player.avatar"
+                [lifePoints]="
+                    gameController.player.attributes.currentHealth
+                        ? gameController.player.attributes.currentHealth
+                        : gameController.player.attributes.health
+                "
+                [speed]="
+                    gameController.player.attributes.currentSpeed
+                        ? gameController.player.attributes.currentSpeed
+                        : gameController.player.attributes.speed
+                "
+                [attack]="
+                    gameController.player.attributes.currentAttack
+                        ? gameController.player.attributes.currentAttack
+                        : gameController.player.attributes.attack
+                "
+                [defense]="
+                    gameController.player.attributes.currentDefense
+                        ? gameController.player.attributes.currentDefense
+                        : gameController.player.attributes.defense
+                "
+                [bonusDice]="gameController.player.attributes.dice"
+                [movementPoints]="currentMoveBudget"
+                [nActions]="remainingActions"
+            >
+            </app-player-panel>
+            } } @if (gameController.isInCombat()) {
+            <app-combat-interface
+                class="combat-card"
+                (selectCombatActionEvent)="catchSelectCombatAction($event)"
+                [currentAtttack]="
+                    gameController.player.attributes.currentAttack
+                        ? gameController.player.attributes.currentAttack
+                        : gameController.player.attributes.attack
+                "
+                [currentDefense]="
+                    gameController.player.attributes.currentDefense
+                        ? gameController.player.attributes.currentDefense
+                        : gameController.player.attributes.defense
+                "
+                [attackSuccessful]="attackSuccessful"
+                [attackerDiceResult]="attackerDiceResult"
+                [defenderDiceResult]="defenderDiceResult"
+                [isActivePlayer]="gameController.isActivePlayer()"
+                [escapeChance]="remainingEscapeChances"
+            ></app-combat-interface>
+            }
+        </section>
+
+        <section class="game-map">
+            @if (gameCreated) {
+            <app-game-map [mapSize]="mapSize"></app-game-map>
+            }
+
+            <section class="game-btns">
+                @if (playersInitialized) {
+                <app-inventory class="tools" [items]="gameController.player.inventory"></app-inventory>
+                } @if (!gameController.isInCombat()) {
+                <button mat-raised-button color="primary" (click)="startAction()">
+                    <mat-icon> construction </mat-icon>
+                    Action
+                </button>
+                <button mat-raised-button color="primary" (click)="endTurn()">
+                    <mat-icon> check </mat-icon>
+                    Fin de tours
+                </button>
+                }
+                <button mat-raised-button color="warn" (click)="quitGame()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    Abandon
+                </button>
+            </section>
+        </section>
     </section>
+
+    @if (playersInitialized) {
+    <mat-card class="tabs" appearance="outlined">
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="0ms">
+            <mat-tab label="Clavardage">
+                <div class="chat-container no-scroll">
+                    <app-chat [roomId]="gameController.roomId" [characterName]="gameController.player.name"></app-chat>
+                </div>
+            </mat-tab>
+            <mat-tab label="Journalisation">
+                <div class="journal-container">
+                    <app-logs [player]="gameController.player"></app-logs>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+
+    <app-timer class="timer" [timeLeft]="timeLeft" [timerState]="timerState"></app-timer>
+
+    <app-leaderboard
+        [afklist]="gameController.afklist"
+        [turn]="gameController.turn"
+        [playerCoords]="gameController.playerCoords"
+        [activePlayer]="gameController.activePlayer"
+        class="leaderboard"
+    ></app-leaderboard>
+    }
 </div>

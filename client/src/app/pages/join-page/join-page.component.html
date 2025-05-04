@@ -1,0 +1,28 @@
+<div class="main-container">
+    <button class="button-style" [routerLink]="['/home']">Retourner au menu</button>
+    <h1 class="medievalsharp-regular">Rejoindre une partie</h1>
+    <p #roomCheck></p>
+    <input class="code-input" type="text" placeholder="Entrez un code à 4 chiffres" [(ngModel)]="roomId" (keyup.enter)="onSubmitCode($event)" />
+    @if (isRoomCodeValid){
+    <div class="input-name-container">
+        <input
+            type="text"
+            class="name-input"
+            placeholder="Entrez votre nom..."
+            minLength="3"
+            maxlength="15"
+            pattern="^([a-zA-Z]{3,15})( [a-zA-Z]{3,15})*$"
+            id="character-name"
+            required
+            [(ngModel)]="characterName"
+            name="characterName"
+        />
+    </div>
+    <app-avatar-slider (selectedAvatarEmitter)="receiveSelectedAvatar($event)" [avatars]="availableAvatars"></app-avatar-slider>
+    <h4 class="medievalsharp-regular">Attributs du personnage</h4>
+
+    <app-attribute-selection (attributesEmitter)="receiveAttributes($event)"></app-attribute-selection>
+
+    <button class="button-style" type="submit" (click)="onSubmit()">Rejoindre la partie!</button>
+    }
+</div>

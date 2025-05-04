@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
     providedIn: 'root',
 })
 export class TimeService {
-    // TODO : Permettre plus qu'une minuterie à la fois
     private interval: number | undefined;
-    private readonly tick = 1000;
+    // eslint-disable-next-line -- constants must be in SCREAMING_SNAKE_CASE
+    private readonly TICK = 1000;
 
     private counter = 0;
     get time() {
@@ -25,7 +25,7 @@ export class TimeService {
             } else {
                 this.stopTimer();
             }
-        }, this.tick);
+        }, this.TICK);
     }
 
     stopTimer() {

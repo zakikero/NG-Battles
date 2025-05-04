@@ -1,0 +1,31 @@
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=swords"
+/>
+<mat-card class="combat-card" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>Combat!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{ attackerDiceInfo }}</p>
+        <p>{{ defenderDiceInfo }}</p>
+        <p>{{ escapeChanceInfo }}</p>
+        <p>L'attaque est valide: {{ attackSuccessful ? 'Oui!' : 'Non !' }}</p>
+    </mat-card-content>
+    <mat-card-footer class="card-footer">
+        @if (isActivePlayer) {
+        <section class="combat-btns">
+            <button mat-raised-button color="primary" (click)="attack()">
+                <mat-icon class="material-symbols-outlined"> swords </mat-icon>
+                Attaque
+            </button>
+            @if (escapeChance !== 0) {
+            <button mat-raised-button color="primary" (click)="escape()">
+                <mat-icon>directions_run</mat-icon>
+                Évasion
+            </button>
+            }
+        </section>
+        }
+    </mat-card-footer>
+</mat-card>

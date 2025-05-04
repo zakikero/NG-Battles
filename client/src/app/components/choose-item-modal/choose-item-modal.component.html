@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Débarassez-vous d'un item</h2>
+
+<mat-dialog-content>
+    <mat-grid-list cols="3" rowHeight="1:1">
+        @for (item of data.itemTypes; track $index) {
+        <mat-grid-tile [class.selected]="selectedItem === item" (click)="selectItem(item)">
+            <img src="./assets/{{ item }}_transparent.png" alt="{{ item }}" [class.selected-image]="selectedItem === item" />
+        </mat-grid-tile>
+        }
+    </mat-grid-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button [disabled]="!selectedItem" color="primary" (click)="onConfirm()">Confirmer</button>
+</mat-dialog-actions>

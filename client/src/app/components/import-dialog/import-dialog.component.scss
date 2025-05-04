@@ -1,0 +1,46 @@
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+label.custom-file-input,
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+label.custom-file-input:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+span {
+    margin-top: 10px;
+    color: #333;
+}
+
+p {
+    color: red;
+    margin-top: 10px;
+    white-space: pre-line;
+    text-align: center;
+}
+
+input[type='text'] {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

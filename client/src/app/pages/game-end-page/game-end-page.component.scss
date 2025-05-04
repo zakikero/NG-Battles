@@ -1,0 +1,136 @@
+@import '../../global-files/global.scss';
+
+$font-family: 'MedievalSharp';
+$primary-color: rgb(255, 255, 255);
+$secondary-color: rgb(140, 94, 184);
+$hover-color: #e5c50e;
+$active-color: darkgoldenrod;
+$border-color: black;
+$border-radius: 50px;
+$transition-duration: 0.3s;
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+    background-color: #303030;
+    color: white;
+}
+
+.global-stats-chat-container {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.player-stats-container {
+    flex: 2;
+    background: #424242;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+.global-stats-container {
+    flex: 1;
+    background: #424242;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat-container {
+    height: 300px;
+    background: #424242;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    width: 20vw;
+    font-size: 20px;
+    background-color: $secondary-color;
+    border: 3px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition:
+        transform $transition-duration,
+        box-shadow $transition-duration,
+        background-color $transition-duration;
+
+    &:hover:not(:active) {
+        transform: scale(1.1) rotate(10deg);
+        background-color: $hover-color;
+        box-shadow:
+            0 0 10px $hover-color,
+            0 0 20px $hover-color,
+            0 0 30px $hover-color,
+            0 0 40px $hover-color,
+            0 0 50px $hover-color,
+            0 0 60px $hover-color;
+        animation:
+            wiggle 0.5s ease-in-out infinite,
+            colorChange 1s infinite,
+            pulse 1s infinite,
+            shadowPulse 1s infinite;
+    }
+
+    &:active {
+        transform: scale(0.9);
+        background-color: $active-color;
+        box-shadow: none;
+        animation: none;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: $hover-color;
+    }
+    50% {
+        background-color: $active-color;
+    }
+    100% {
+        background-color: $hover-color;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0 0 10px $hover-color;
+    }
+    50% {
+        box-shadow: 0 0 30px $hover-color;
+    }
+    100% {
+        box-shadow: 0 0 10px $hover-color;
+    }
+}
+
+@media (max-width: 768px) {
+    .global-stats-chat-container {
+        flex-direction: column;
+    }
+
+    button {
+        width: 80vw;
+    }
+}

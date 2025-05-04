@@ -1,0 +1,11 @@
+<section>
+    <div class="app-map">
+        <mat-grid-list [cols]="mapSize">
+            @for ( tile of tiles; track $index) {
+            <mat-grid-tile>
+                <app-tile-basic tileType="{{ tile.tileType }}" itemType="{{ tile.item }}"> </app-tile-basic>
+            </mat-grid-tile>
+            }
+        </mat-grid-list>
+    </div>
+</section>

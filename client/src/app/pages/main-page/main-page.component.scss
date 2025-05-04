@@ -1,44 +1,194 @@
-.container {
+// Variables
+$font-family: 'MedievalSharp';
+$primary-color: rgb(255, 255, 255);
+$secondary-color: rgb(140, 94, 184);
+$hover-color: #e5c50e;
+$active-color: darkgoldenrod;
+$border-color: black;
+$border-radius: 50px;
+$transition-duration: 0.3s;
+
+// Global Import
+@import '../../global-files/global.scss';
+
+// Background
+#background-full {
+    background-image: url('../../../assets/game-selection-page/dungeon-background-selection-game-page.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
-    height: auto;
 }
 
-.justified {
+// Typography
+h4,
+p,
+button {
+    font-family: $font-family;
+}
+
+h4 {
+    margin-top: 0.5em;
+}
+
+p {
+    width: 18vw;
+}
+
+button:hover:not(:active) {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+// Button Styles
+button {
+    margin: 10px;
+    padding: 10px;
+    width: 20vw;
+    font-size: 20px;
+    background-color: $secondary-color;
+    border: 3px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition:
+        transform $transition-duration,
+        box-shadow $transition-duration,
+        background-color $transition-duration;
+
+    &:hover:not(:active) {
+        transform: scale(1.1) rotate(10deg);
+        background-color: $hover-color;
+        box-shadow:
+            0 0 10px $hover-color,
+            0 0 20px $hover-color,
+            0 0 30px $hover-color,
+            0 0 40px $hover-color,
+            0 0 50px $hover-color,
+            0 0 60px $hover-color;
+        animation:
+            wiggle 0.5s ease-in-out infinite,
+            colorChange 1s infinite,
+            pulse 1s infinite,
+            shadowPulse 1s infinite;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow:
+            0 0 10px $hover-color,
+            0 0 20px $hover-color,
+            0 0 30px $hover-color,
+            0 0 40px $hover-color,
+            0 0 50px $hover-color,
+            0 0 60px $hover-color;
+    }
+
+    &:active {
+        transform: scale(0.9);
+        background-color: $active-color;
+        box-shadow: none;
+        animation: none;
+    }
+
+    @keyframes colorChange {
+        0% {
+            background-color: $hover-color;
+        }
+        50% {
+            background-color: $active-color;
+        }
+        100% {
+            background-color: $hover-color;
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shadowPulse {
+        0% {
+            box-shadow: 0 0 10px $hover-color;
+        }
+        50% {
+            box-shadow: 0 0 30px $hover-color;
+        }
+        100% {
+            box-shadow: 0 0 10px $hover-color;
+        }
+    }
+}
+
+// Animations
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+img {
+    animation: scaleLogo 0.5s infinite alternate;
+
+    &:active {
+        animation: crazySpin 0.5s linear infinite;
+    }
+
+    @keyframes crazySpin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@keyframes scaleLogo {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.7);
+    }
+}
+
+// Layout
+team-name {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+#main-container {
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    height: 100vh;
 }
 
-.button {
-    margin-top: 10px;
+#btn-container {
+    color: antiquewhite;
+    display: flex;
+    padding: 20px 20px 0 20px;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-}
-
-.team-name {
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
-    color: green;
-}
-
-.header-item {
-    justify-content: center;
-    text-align: center;
-}
-
-.footer-item {
-    text-align: center;
-}
-
-.footer-item p :nth-child(even) {
-    color: orange;
-}
-.footer-item p :nth-child(odd) {
-    color: blue;
-}
-
-.server-message {
-    justify-content: center;
-    width: 20%;
-    min-width: min-content;
 }

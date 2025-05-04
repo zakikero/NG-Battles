@@ -1,0 +1,45 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <!-- Role Column -->
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef>Rôle</th>
+        <td
+            mat-cell
+            *matCellDef="let element"
+            [class.active]="activePlayer && activePlayer.id === element.id"
+            [class.abandoned]="afkPlayerIds.includes(element.id)"
+        >
+            @if (hasFlag(element)) {
+            <mat-icon aria-hidden="false" aria-label="Flag icon" fontIcon="flag"></mat-icon>
+            } @if(element.isVirtual) { Virtuel }@else if(element.isAdmin){ Admin }@else { Joueur }
+        </td>
+    </ng-container>
+
+    <!-- Player Name Column -->
+    <ng-container matColumnDef="playerName">
+        <th mat-header-cell *matHeaderCellDef>Nom du Joueur</th>
+        <td
+            mat-cell
+            *matCellDef="let element"
+            [class.active]="activePlayer && activePlayer.id === element.id"
+            [class.abandoned]="afkPlayerIds.includes(element.id)"
+        >
+            {{ element.name }}
+        </td>
+    </ng-container>
+
+    <!-- Win Number Column -->
+    <ng-container matColumnDef="nWins">
+        <th mat-header-cell *matHeaderCellDef>Victoires</th>
+        <td
+            mat-cell
+            *matCellDef="let element"
+            [class.active]="activePlayer && activePlayer.id === element.id"
+            [class.abandoned]="afkPlayerIds.includes(element.id)"
+        >
+            {{ element.wins ? element.wins : 'Aucune' }}
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

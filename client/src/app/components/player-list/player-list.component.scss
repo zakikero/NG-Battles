@@ -1,0 +1,68 @@
+@import url('../../global-files/global.scss');
+$primary-color: rgb(255, 255, 255);
+$secondary-color: rgb(140, 94, 184);
+$hover-color: #e5c50e;
+$active-color: darkgoldenrod;
+$border-color: black;
+$border-radius: 20px;
+$transition-duration: 0.3s;
+
+.player-list-container {
+    font-family: 'MedievalSharp', sans-serif;
+    font-size: 17px;
+    color: black;
+    height: 100%;
+    background-color: $secondary-color;
+    border: 3px solid $border-color;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.player-name {
+    margin-left: 7px;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid $border-color;
+}
+
+.player-item:last-child {
+    border-bottom: none;
+}
+
+.player-item img {
+    height: 40px;
+    width: auto;
+    margin: 5px 5px 0px 5px;
+}
+
+.player-item span {
+    flex-grow: 1;
+}
+
+.player-item {
+    margin: 0;
+}
+
+.player-item button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.player-item button:hover {
+    background-color: #ff1a1a;
+    scale: 1.1;
+}

@@ -1,0 +1,20 @@
+<div class="main-container">
+    <h3 class="medievalsharp-regular">Créer un personnage virtuel</h3>
+    <div class="virtual-player-container"></div>
+
+    <p>Choisir le profil</p>
+    <div>
+        <input type="radio" id="aggressif" value="aggressive" [(ngModel)]="characterProfile" name="characterProfile" required />
+        <label for="aggressif">Agressif</label>
+        <input type="radio" id="defensif" value="defensive" [(ngModel)]="characterProfile" name="characterProfile" required />
+        <label for="defensif">Défensif</label>
+    </div>
+
+    @if(characterProfile){
+    <button class="randomize-btn" (click)="randomizePlayer()">Générer joueur aléatoire</button>
+    } @if(virtualPlayer && characterProfile){
+    <p>{{ virtualPlayer.name }}</p>
+    <img class="avatar" [src]="virtualAvatar.img" />
+    <button class="button-style" (click)="addVirtualPlayer()">Ajouter le joueur virtuel</button>
+    }
+</div>

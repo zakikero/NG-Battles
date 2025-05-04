@@ -1,0 +1,37 @@
+<mat-card class="medievalsharp-regular">
+    <div [class.visibility]="!game.isVisible">
+        <mat-card-header>
+            <p id="title">{{ game.gameName }}</p>
+        </mat-card-header>
+
+        <div matTooltip="{{ this.game.gameDescription }}" matTooltipPosition="below">
+            <mat-card-content id="img-container" style="pointer-events: none">
+                <app-map-preview [mapSize]="mapSize" [tiles]="game.map"></app-map-preview>
+            </mat-card-content>
+        </div>
+        <mat-card-content id="main-container">
+            <p>Taille: {{ game.mapSize }}</p>
+            <p>Mode: {{ game.gameType }}</p>
+            <p>Dernière Modification: {{ game.lastModified }}</p>
+        </mat-card-content>
+
+        <mat-card-actions class="btn-container">
+            <button mat-raised-button (click)="editGame()">
+                <mat-icon class="visible-icon">edit</mat-icon>
+                Éditer
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteGame()">
+                <mat-icon class="visible-icon">delete</mat-icon>
+                Supprimer
+            </button>
+            <button mat-raised-button (click)="exportGame()">Exporter</button>
+            <button mat-raised-button (click)="invertVisibility()">
+                @if (game.isVisible){
+                <img src="./assets/view.png" alt="Visible" class="visible-icon" />
+                } @else {
+                <img src="./assets/hide.png" alt="Invisible" class="visible-icon" />
+                }
+            </button>
+        </mat-card-actions>
+    </div>
+</mat-card>

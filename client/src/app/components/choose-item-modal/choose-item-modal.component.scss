@@ -1,0 +1,21 @@
+.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.selected-image {
+    border: 2px solid #3f51b5;
+    border-radius: 4px;
+}
+
+mat-grid-tile {
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+img {
+    max-width: 80%;
+    max-height: 80%;
+    padding: 10px;
+}

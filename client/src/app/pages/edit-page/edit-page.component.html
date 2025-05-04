@@ -1,0 +1,32 @@
+@if (editGameService.gameCreated) {
+<div class="edit-page-div">
+    <div class="left-panel">
+        <h1 class="game-title-edit-page">
+            <div class="border-div">
+                {{ editGameService.game.gameName }}
+                <button mat-mini-fab color="primary" class="edit-game-name-btn" (click)="openDialog()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+        </h1>
+        <app-sidebar
+            [gameType]="editGameService.game.gameType"
+            class="edit-page-sidebar"
+            (selectItemTypeEvent)="mapEditService.changeSelectedItem($event)"
+        ></app-sidebar>
+        <app-toolbar
+            class="edit-page-toolbar"
+            (selectTileTypeEvent)="mapEditService.changeSelectedTile($event)"
+            [selectedTileTypeToolbar]="mapEditService.selectedTileType"
+            [selectedModeToolbar]="mapEditService.selectedMode"
+        ></app-toolbar>
+        <button mat-raised-button color="primary" class="edit-page-save-game-btn" (click)="editGameService.saveGame()">Sauvegarder le Jeu !</button>
+        <button mat-raised-button color="primary" class="edit-page-reset-game-btn" (click)="editGameService.resetGame()">
+            Rénitialiser le Jeu !
+        </button>
+    </div>
+    <div class="edit-page-map">
+        <app-edit-map [mapSize]="editGameService.mapSize"></app-edit-map>
+    </div>
+</div>
+}

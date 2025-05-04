@@ -1,0 +1,12 @@
+@if (globalStats) {
+<div>
+    <h2>Statistiques globales</h2>
+    <p>Durée de la partie: {{ formatMatchLength(globalStats.matchLength) }}</p>
+    <p>Nombre de tours de jeu: {{ globalStats.nbTurns }}</p>
+    <p>Pourcentage des tuiles de terrain visitées: {{ formatVisitedTilesPercent(globalStats.visitedTilesPercent) }}</p>
+    <p>Pourcentage des portes ayant été manipulées: {{ globalStats.usedDoorsPercent }}</p>
+    @if(gameMode === 'ctf'){
+    <p>Nombre de joueurs différents ayant détenu le drapeau: {{ globalStats.nbPlayersHeldFlag }}</p>
+    }
+</div>
+}

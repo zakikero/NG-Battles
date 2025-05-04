@@ -1,0 +1,15 @@
+<div class="main-container">
+    <div class="centered-button">
+        <button class="button-style" [routerLink]="['/home']">Retourner au menu</button>
+    </div>
+    <div id="btn-container">
+        <a mat-raised-button class="buttonclass medievalsharp-regular" [routerLink]="['/create']">Creer</a>
+        <a mat-raised-button class="button medievalsharp-regular" (click)="openImportDialog()">Importer</a>
+    </div>
+    <section id="games-list">
+        @for(game of games; track game.id){
+        <app-admin-item [game]="game" (editGameEvent)="editGame($event)"></app-admin-item>
+        }
+    </section>
+    <p>Importer</p>
+</div>

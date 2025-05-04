@@ -1,20 +1,119 @@
-.container {
-    height: 100%;
+.main-container {
     display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    background-image: url('../../../assets/game-selection-page/dungeon-background-selection-game-page.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: auto;
 }
 
-.play-area-container {
-    overflow: auto;
-    flex: 1 1 auto;
+.game {
+    width: 45%;
+    height: 45%;
+    margin: 0 auto;
+    margin-top: 1rem;
 }
 
-.play-area {
-    display: grid;
-    outline: none;
-    height: 100vh;
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-#sidebar {
-    flex-basis: 350px;
-    min-width: 200px;
+.game-map {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    // height: 60%;
+}
+
+.game-btns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.tabs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 2.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 320px;
+    height: 275px;
+}
+
+.tools {
+    height: 25%;
+    width: 25%;
+    margin-bottom: 1rem;
+}
+
+.game-btns button {
+    margin-top: 1.5rem;
+}
+
+.timer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 3rem;
+    margin-right: 8rem;
+}
+
+app-combat-timer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 3rem;
+    margin-right: 16rem;
+}
+
+.leaderboard {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 4rem;
+    margin-bottom: 8rem;
+}
+.combat-card {
+    width: 25%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 1rem;
+    margin-bottom: 25rem;
+    outline: 2px solid red; /* Highlight the element for focus */
+}
+.player-card {
+    width: 25%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+}
+.game-card {
+    width: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.chat-container {
+    height: 200px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+.journal-container {
+    height: 200px;
 }

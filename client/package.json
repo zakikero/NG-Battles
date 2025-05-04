@@ -9,7 +9,8 @@
     "test": "ng test",
     "coverage": "ng test --code-coverage --source-map=true",
     "lint": "ng lint --format stylish",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "check": "npm run lint && npm run test"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "rxjs": "7.8.1",
     "socket.io-client": "4.7.5",
     "tslib": "2.4.0",
+    "uuid": "^10.0.0",
     "zone.js": "0.14.10"
   },
   "devDependencies": {
@@ -39,6 +41,7 @@
     "@angular/compiler-cli": "18.2.0",
     "@types/jasmine": "4.3.5",
     "@types/node": "20.4.8",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "7.17.0",
     "@typescript-eslint/parser": "7.17.0",
     "eslint": "8.57.0",

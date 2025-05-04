@@ -1,0 +1,34 @@
+<div class="create-game-page">
+    <h1 class="medievalsharp-regular">Créer un jeu</h1>
+
+    <form #gameForm="ngForm" (ngSubmit)="submitChoice()" novalidate>
+        <div class="radio-container">
+            <h3 class="medievalsharp-regular">Choisir le mode de jeu</h3>
+            <div class="radio-group" aria-label="Sélectionner le mode de jeu">
+                <label class="medievalsharp-regular">
+                    <input type="radio" [(ngModel)]="gameType" name="gameMode" value="classic" required /> Classique
+                </label>
+                <label class="medievalsharp-regular">
+                    <input type="radio" [(ngModel)]="gameType" name="gameMode" value="ctf" required /> Capturer le drapeau
+                </label>
+            </div>
+        </div>
+
+        <div class="radio-container">
+            <h3 class="medievalsharp-regular">Choisir la taille de la carte</h3>
+            <div class="radio-group" aria-label="Sélectionner la taille de la carte">
+                <label class="medievalsharp-regular">
+                    <input type="radio" [(ngModel)]="mapSize" name="sizeMap" value="small" required /> Petit
+                </label>
+                <label class="medievalsharp-regular">
+                    <input type="radio" [(ngModel)]="mapSize" name="sizeMap" value="medium" required /> Moyen
+                </label>
+                <label class="medievalsharp-regular">
+                    <input type="radio" [(ngModel)]="mapSize" name="sizeMap" value="large" required /> Grand
+                </label>
+            </div>
+        </div>
+
+        <button mat-fab extended color="primary" type="submit" [disabled]="gameForm.invalid" class="medievalsharp-regular">Continuer</button>
+    </form>
+</div>

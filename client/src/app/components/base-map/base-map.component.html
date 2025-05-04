@@ -1,0 +1,24 @@
+<section (contextmenu)="$event.preventDefault()" (mousedown)="$event.preventDefault()">
+    <div class="app-map" (mouseleave)="mapService.onExit()">
+        <mat-grid-list [cols]="mapSize">
+            @for ( tile of mapService.tiles; track $index) {
+            <mat-grid-tile>
+                <app-tile-basic
+                    draggable="true"
+                    tileType="{{ tile.tileType }}"
+                    itemType="{{ tile.item }}"
+                    (contextmenu)="$event.preventDefault(); mapService.onRightClick(tile.idx)"
+                    (mousedown)="mapService.onMouseDown(tile.idx, $event)"
+                    (mouseup)="mapService.onMouseUp(tile.idx, $event)"
+                    (drop)="$event.stopPropagation(); mapService.onDrop(tile.idx)"
+                    (dragover)="$event.preventDefault(); $event.stopPropagation()"
+                    (mouseenter)="mapService.onMouseEnter(tile.idx, $event)"
+                    [isAccessible]="mapService.isGameTile(tile) ? tile.isAccessible : undefined"
+                    [avatar]="mapService.isPlayerTile(tile) ? tile.player.avatar : undefined"
+                >
+                </app-tile-basic>
+            </mat-grid-tile>
+            }
+        </mat-grid-list>
+    </div>
+</section>

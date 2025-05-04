@@ -1,0 +1,27 @@
+<div mat-dialog-content class="modal-container">
+    <h1 mat-dialog-title>Information sur la tuile</h1>
+    @if (data.tile) {
+    <div class="tile-info">
+        <p><strong>Type de tuile:</strong> {{ this.tileType ? this.tileType : 'Aucune' }}</p>
+        <p><strong>Caractéristique de la tuile:</strong></p>
+        <p>Position de la tuile: {{ data.tile.idx }}</p>
+        <p>Un joueur est présent : {{ data.tile.hasPlayer ? 'Oui !' : 'Non !' }}</p>
+        <p>La tuile est accessible: {{ data.tile.isAccessible ? 'Oui !' : 'Non !' }}</p>
+        <p>
+            Effet de la tuile sur le joueur:
+            {{ tileEffect }}
+        </p>
+        <p><strong>Objet présent:</strong> {{ objectName ? objectName : 'Aucun' }}</p>
+        <p>
+            Effet de l'objet sur le joueur:
+            {{ objectEffect }}
+        </p>
+        <p><strong>Caractéristique pour le joueur:</strong></p>
+        <p>Nom du joueur : {{ data.tile.player?.name ? data.tile.player?.name : 'Aucun joueur présent !' }}</p>
+
+        @if (data.tile.player) {
+        <img src="./assets/characters/{{ chooseAvatar(data.tile.player.avatar) }}.png" alt="Image du joueur" width="100" height="100" />
+        }
+    </div>
+    }
+</div>

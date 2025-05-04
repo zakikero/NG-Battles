@@ -1,22 +1,15 @@
-<div class="container justified">
-    <h1 class="header-item">Bienvenue au cours {{ title }}</h1>
-    <img src="https://bit.ly/3QofL1J" alt="Logo Projet" />
-    <section id="server-message" class="justified">
-        <p>Petit message du serveur : {{ message.getValue() }}</p>
-        <div class="justified">
-            <button class="button" (click)="getMessagesFromServer()">Récupérer un message du serveur</button>
-            <button class="button" (click)="sendTimeToServer()">Envoyer un message au serveur</button>
-            <button class="button" routerLink="/material">Voir la page démo Angular Material</button>
+<div id="background-full">
+    <div id="main-container">
+        <div id="img-container">
+            <img src="./assets/logo.png" alt="NG-BATTLE LOGO" class="logo-ng-battle" />
         </div>
-    </section>
+        <div id="btn-container">
+            <button class="button-style" [routerLink]="['/joinRoom']">Joindre une partie</button>
+            <button class="button-style" [routerLink]="['/gameSelection']">Créer une Partie</button>
+            <button class="button-style" [routerLink]="['/admin']">Administrer les jeux</button>
 
-    <button class="button" routerLink="/game">Jouer!</button>
-
-    <footer class="footer-item">
-        <h4 class="team-name">Équipe Poly</h4>
-        <p>
-            <span>Coéquipier #1</span>, <span>Coéquipier #2</span>, <span>Coéquipier #3</span>, 
-            <span>Coéquipier #4</span>, <span>Coéquipier #5</span>, <span>Coéquipier #6</span>
-        </p>
-    </footer>
+            <h4>Équipe 208</h4>
+            <p>Zakaria Kerouani, Rayan Ajakane, Yanis Lourdjane, Anis Dib, Samyar Janatian, Ali Gabr</p>
+        </div>
+    </div>
 </div>

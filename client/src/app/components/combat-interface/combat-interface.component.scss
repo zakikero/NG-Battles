@@ -1,0 +1,24 @@
+.card-footer {
+    padding: 1rem;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.combat-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}

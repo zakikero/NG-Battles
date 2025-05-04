@@ -1,0 +1,65 @@
+@import '../../global-files/global.scss';
+
+.create-game-page {
+    background-image: url('./../../../assets/game-selection-page/dungeon-background-selection-game-page.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    color: white;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem;
+}
+
+.radio-container {
+    margin: 3rem;
+}
+
+mat-radio-button {
+    margin: 0.5rem 0;
+    .mat-radio-outer-circle {
+        border-color: white;
+    }
+    .mat-radio-inner-circle {
+        background-color: white;
+    }
+    .mat-radio-ripple {
+        color: white;
+    }
+}
+
+button {
+    margin-top: 2rem;
+}
+
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+}
+
+.submit-icon {
+    width: 10%;
+    height: 1%;
+    margin-right: 8px;
+}

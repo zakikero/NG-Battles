@@ -1,0 +1,23 @@
+<div class="character-selection-container">
+    <div class="custom-slider-arrow mt-sm">
+        <img class="arrowImg" src="./assets/game-selection-page/left-arrow.png" alt="Left" (click)="scrollLeft()" />
+    </div>
+
+    <div class="character-list-wrapper">
+        <section id="character-list" #widgetsContent>
+            <div *ngFor="let avatar of avatars" class="character-avatar">
+                <img
+                    class="avatar"
+                    [src]="avatar.img"
+                    [alt]="avatar.name"
+                    [class.selected]="selectedAvatar === avatar"
+                    (click)="selectAvatar(avatar)"
+                />
+            </div>
+        </section>
+    </div>
+
+    <div class="custom-slider-arrow mt-sm">
+        <img class="arrowImg" src="./assets/game-selection-page/right-arrow.png" alt="Right" (click)="scrollRight()" />
+    </div>
+</div>

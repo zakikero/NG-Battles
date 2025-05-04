@@ -1,0 +1,81 @@
+<div class="attributes-container">
+    <div class="life-speed-container-wrapper">
+        <div class="life-speed-container">
+            <div class="attribute">
+                <div class="image-container">
+                    <img
+                        matTooltip="Le nombre de points de vie du personnage"
+                        matTooltipPosition="above"
+                        class="attribute-image"
+                        src="./assets/game-selection-page/heart8bit.png"
+                    />
+                </div>
+                <label for="life-attribute">{{ life }} pts</label>
+                <label (click)="addBonus('life')">
+                    <input type="radio" name="lifeSpeed" id="life-attribute" (click)="addBonus('life')" checked /> +2 pts
+                </label>
+            </div>
+            <div class="attribute">
+                <div class="image-container">
+                    <img
+                        matTooltip="Sert a déterminer l'ordre des tours et correspond aussi au points de mouvement par tours du personnage"
+                        matTooltipPosition="above"
+                        class="attribute-image"
+                        src="./assets/game-selection-page/thunder-icon.png"
+                    />
+                </div>
+                <label for="speed-attribute">{{ speed }} pts</label>
+                <label (click)="addBonus('speed')"
+                    ><input type="radio" name="lifeSpeed" id="speed-attribute" (click)="addBonus('speed')" /> +2 pts</label
+                >
+            </div>
+        </div>
+        <div>
+            <p>*Rajoutez +2 points à attaque ou vie</p>
+            <p>(un seul des deux choix est permis)</p>
+        </div>
+    </div>
+    <div class="radio-attack-defense-container">
+        <div class="attack-defense-container">
+            <div class="attribute">
+                <div class="image-container">
+                    <img
+                        matTooltip="Représente la force avec laquelle une attaque est faite par le personnage"
+                        matTooltipPosition="above"
+                        class="attribute-image"
+                        src="./assets/game-selection-page/sword-icon.png"
+                    />
+                </div>
+                <p>{{ attack }} pts</p>
+                <p>Dé à {{ selectedDice.attack }} faces</p>
+            </div>
+            <div class="attribute">
+                <div class="image-container">
+                    <img
+                        matTooltip="Représente la capacité du personnage à se défendre contre une attaque"
+                        matTooltipPosition="above"
+                        class="attribute-image"
+                        src="./assets/game-selection-page/shield-icon.png"
+                    />
+                </div>
+                <p>{{ defense }} pts</p>
+                <p>Dé à {{ selectedDice.defense }} faces</p>
+            </div>
+        </div>
+        <div>Attribuer le dé à 6 faces à:</div>
+        <div class="dice-container">
+            <input
+                class="medievalsharp-regular"
+                type="radio"
+                name="attack-defense"
+                value="attack"
+                id="attack-dice"
+                (change)="assignDice($event)"
+                checked
+            />
+            Attaque
+            <input class="medievalsharp-regular" type="radio" name="attack-defense" value="defense" id="defense-dice" (change)="assignDice($event)" />
+            Défense
+        </div>
+    </div>
+</div>

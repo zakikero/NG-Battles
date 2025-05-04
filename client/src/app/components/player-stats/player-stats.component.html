@@ -1,0 +1,52 @@
+<div>
+    <h2>Statistiques des joueurs</h2>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell value="name" *matHeaderCellDef mat-sort-header>Nom</th>
+            <td mat-cell *matCellDef="let player">{{ player.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="combatCount">
+            <th mat-header-cell value="combatCount" *matHeaderCellDef mat-sort-header>Nombre de combats</th>
+            <td mat-cell *matCellDef="let player">{{ player.combatCount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="escapeCount">
+            <th mat-header-cell value="escapeCount" *matHeaderCellDef mat-sort-header>Nombre d'évasion</th>
+            <td mat-cell *matCellDef="let player">{{ player.escapeCount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="victoryCount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre de victoire</th>
+            <td mat-cell *matCellDef="let player">{{ player.victoryCount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="defeatCount">
+            <th mat-header-cell value="defeatCount" *matHeaderCellDef mat-sort-header>Nombre de défaites</th>
+            <td mat-cell *matCellDef="let player">{{ player.defeatCount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalHealthLost">
+            <th mat-header-cell value="totalHealthLost" *matHeaderCellDef mat-sort-header>Points de vie perdus</th>
+            <td mat-cell *matCellDef="let player">{{ player.totalHealthLost }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalHealthTaken">
+            <th mat-header-cell value="totalHealthTaken" *matHeaderCellDef mat-sort-header>Points de vie enlevés aux adversaires</th>
+            <td mat-cell *matCellDef="let player">{{ player.totalHealthTaken }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="uniqueItemsCollected">
+            <th mat-header-cell value="uniqueItemsCollected" *matHeaderCellDef mat-sort-header>Objets différents ramassés</th>
+            <td mat-cell *matCellDef="let player">{{ player.uniqueItemsCollected }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="visitedTilesPercent">
+            <th mat-header-cell value="visitedTilesPercent" *matHeaderCellDef mat-sort-header>% de tuiles visités</th>
+            <td mat-cell *matCellDef="let player">{{ player.visitedTilesPercent.toFixed(2) }}%</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+</div>

@@ -1,7 +1,48 @@
-.container {
-    height: auto;
-    min-height: 98vh;
-    border: 1px solid black;
-    padding: 0 5px 0 5px;
-    margin-right: 5px;
+mat-grid-tile {
+    background: lightcoral;
+    border: 3px solid gray;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+    &:hover {
+        border: 3px solid rgb(72, 243, 42);
+        transform: scale(1.15);
+        z-index: 1;
+    }
+    height: 10px;
+}
+
+// EFFECT ON THE IMAGE WHEN DRAGGED
+mat-grid-tile:active {
+    opacity: 0.8;
+    border: 3px solid rgb(19, 37, 110);
+}
+.cdk-drag-preview {
+    height: 10px;
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgb(72, 243, 42);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0.5;
+    border: 2px lightgray;
+}
+
+.tile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.badge-container {
+    display: flex;
+}
+
+.drag-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
 }

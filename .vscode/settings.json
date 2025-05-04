@@ -7,4 +7,8 @@
     },
     "html.format.indentInnerHtml": true,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.words": ["attaque", "défense"]
 }
