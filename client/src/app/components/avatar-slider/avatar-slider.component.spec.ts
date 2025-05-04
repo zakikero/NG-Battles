@@ -31,10 +31,6 @@ describe('AvatarSliderComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
-    });
-
     it('should scroll left', () => {
         component.scrollLeft();
         // eslint-disable-next-line
