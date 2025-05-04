@@ -34,7 +34,7 @@ describe('AttributeSelectionComponent', () => {
         expect(component.life).toBe(6);
     });
 
-    it('should assign dice', () => {
+    it('should assign dice to attack', () => {
         const event = {
             target: {
                 value: 'attack',
