@@ -52,7 +52,6 @@ $transition-duration: 0.3s;
             0 0 50px $hover-color,
             0 0 60px $hover-color;
         animation:
-            wiggle 0.5s ease-in-out infinite,
             colorChange 1s infinite,
             pulse 1s infinite,
             shadowPulse 1s infinite;
