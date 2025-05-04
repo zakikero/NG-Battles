@@ -8,7 +8,7 @@ import { DEFAULT_ATTRIBUTE_VALUE, DEFAULT_ATTRIBUTE_VALUE_SELECTED, DICE4, DICE6
     standalone: true,
     imports: [MatTooltipModule],
     templateUrl: './attribute-selection.component.html',
-    styleUrl: './attribute-selection.component.scss',
+    styleUrls: ['./attribute-selection.component.scss'],
 })
 export class AttributeSelectionComponent implements OnInit {
     @Output() attributesEmitter = new EventEmitter<PlayerAttribute>();
