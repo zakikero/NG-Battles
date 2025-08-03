@@ -2,9 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { TileInfoModalComponent } from '@app/components/tile-info-modal/tile-info-modal.component';
 import { GameTile, ShortestPathByTile } from '@common/game-structure';
-import { BaseStateService } from './base-state.service';
-import { RANDOM_TILE_INDEX, TEST_AVAILABLE_TILES, TEST_SHORTEST_PATH, TEST_SHORTEST_PATH_BY_INDEX } from './constants';
-import { GameControllerService } from './game-controller.service';
+import { BaseStateService } from '../base-state.service';
+import { RANDOM_TILE_INDEX, TEST_AVAILABLE_TILES, TEST_SHORTEST_PATH, TEST_SHORTEST_PATH_BY_INDEX } from '../constants';
+import { GameControllerService } from '../game-controller.service';
 /* eslint-disable */
 
 describe('BaseStateService', () => {

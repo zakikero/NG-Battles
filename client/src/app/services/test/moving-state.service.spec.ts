@@ -2,10 +2,10 @@ import { TestBed } from '@angular/core/testing';
 
 import { GameState, ShortestPathByTile } from '@common/game-structure';
 import { ItemTypes, TileTypes } from '@common/tile-types';
-import { BaseStateService } from './base-state.service';
-import { TEST_SHORTEST_PATH_BY_INDEX } from './constants';
-import { GameControllerService } from './game-controller.service';
-import { MovingStateService } from './moving-state.service';
+import { BaseStateService } from '../base-state.service';
+import { TEST_SHORTEST_PATH_BY_INDEX } from '../constants';
+import { GameControllerService } from '../game-controller.service';
+import { MovingStateService } from '../moving-state.service';
 /* eslint-disable */
 
 describe('MovingStateService', () => {

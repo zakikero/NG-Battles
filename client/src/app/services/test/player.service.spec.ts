@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { PlayerAttribute } from '@common/player';
-import { PlayerService } from './player.service';
+import { PlayerService } from '../player.service';
 /* eslint-disable */
 
 describe('PlayerService', () => {

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { IDGenerationService } from './idgeneration.service';
+import { IDGenerationService } from '../idgeneration.service';
 /* eslint-disable */
 
 describe('IDgenerationService', () => {

@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { GameTile, TilePreview, TileStructure } from '@common/game-structure';
 import { Player } from '@common/player';
-import { MOCK_PLAYER } from './constants';
-import { MapBaseService } from './map-base.service';
+import { MOCK_PLAYER } from '../constants';
+import { MapBaseService } from '../map-base.service';
 /* eslint-disable */
 
 describe('MapBaseService', () => {

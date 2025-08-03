@@ -2,12 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import { GameState, GameTile, ShortestPathByTile, TilePreview } from '@common/game-structure';
 import { Player, PlayerCoord } from '@common/player';
 import { ItemTypes, TileTypes } from '@common/tile-types';
-import { ActionStateService } from './action-state.service';
-import { CombatStateService } from './combat-state.service';
-import { MOCK_PLAYER, TEST_SHORTEST_PATH_BY_INDEX } from './constants';
-import { MapGameService } from './map-game.service';
-import { MovingStateService } from './moving-state.service';
-import { NotPlayingStateService } from './not-playing-state.service';
+import { ActionStateService } from '../action-state.service';
+import { CombatStateService } from '../combat-state.service';
+import { MOCK_PLAYER, TEST_SHORTEST_PATH_BY_INDEX } from '../constants';
+import { MapGameService } from '../map-game.service';
+import { MovingStateService } from '../moving-state.service';
+import { NotPlayingStateService } from '../not-playing-state.service';
 /* eslint-disable */
 
 const player1: Player = MOCK_PLAYER;

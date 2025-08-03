@@ -4,8 +4,8 @@ import { DELAY } from '@app/pages/game-page/constant';
 import { SocketService } from '@app/services/socket.service';
 import { Player, PlayerCoord } from '@common/player';
 import { ItemTypes } from '@common/tile-types';
-import { MOCK_PLAYER, MOCK_PLAYER_TWO, TEST_MOVE_BUDGET } from './constants';
-import { GameControllerService } from './game-controller.service';
+import { MOCK_PLAYER, MOCK_PLAYER_TWO, TEST_MOVE_BUDGET } from '../constants';
+import { GameControllerService } from '../game-controller.service';
 
 /* eslint-disable max-lines */
 

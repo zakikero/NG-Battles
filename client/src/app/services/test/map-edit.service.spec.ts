@@ -3,8 +3,8 @@ import { TestBed } from '@angular/core/testing';
 import { CurrentMode } from '@app/data-structure/editViewSelectedMode';
 import { TileStructure } from '@common/game-structure';
 import { ItemTypes, TileTypes } from '@common/tile-types';
-import { DragDropService } from './drag-drop.service';
-import { MapEditService } from './map-edit.service';
+import { DragDropService } from '../drag-drop.service';
+import { MapEditService } from '../map-edit.service';
 /* eslint-disable */
 
 describe('MapEditService', () => {

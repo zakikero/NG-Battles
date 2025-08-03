@@ -2,7 +2,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { GameStructure } from '@common/game-structure';
-import { HttpClientService } from './http-client.service';
+import { HttpClientService } from '../http-client.service';
 /* eslint-disable */
 
 describe('HttpClientService', () => {

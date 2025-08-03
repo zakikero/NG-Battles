@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { Socket } from 'socket.io-client';
-import { SocketService } from './socket.service';
+import { SocketService } from '../socket.service';
 /* eslint-disable */
 
 describe('SocketService', () => {

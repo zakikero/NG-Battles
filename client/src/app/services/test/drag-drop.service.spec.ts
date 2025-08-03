@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { TileStructure } from '@common/game-structure';
 import { TileTypes } from '@common/tile-types';
-import { DragDropService } from './drag-drop.service';
+import { DragDropService } from '../drag-drop.service';
 /* eslint-disable */
 
 describe('DragDropService', () => {

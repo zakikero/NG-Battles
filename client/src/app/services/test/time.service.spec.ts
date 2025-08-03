@@ -1,6 +1,6 @@
 import { TestBed, discardPeriodicTasks, fakeAsync, tick } from '@angular/core/testing';
 
-import { TimeService } from './time.service';
+import { TimeService } from '../time.service';
 /* eslint-disable */
 
 describe('TimeService', () => {

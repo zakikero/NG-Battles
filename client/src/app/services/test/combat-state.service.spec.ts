@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { GameState } from '@common/game-structure';
-import { CombatStateService } from './combat-state.service';
-import { GameControllerService } from './game-controller.service';
+import { CombatStateService } from '../combat-state.service';
+import { GameControllerService } from '../game-controller.service';
 /* eslint-disable */
 
 describe('CombatStateService', () => {
