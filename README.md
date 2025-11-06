@@ -474,34 +474,23 @@ PATCH  /api/games/:id/visibility  # Toggle game visibility
 
 ## 🚀 Deployment
 
-The application is deployed using a CI/CD pipeline:
+The application is deployed using automated CI/CD pipelines with GitLab:
 
-### Client Deployment
+### Production Environment
 
--   **Platform**: GitLab Pages
--   **Build**: Production optimized Angular build
--   **URL**: Static site hosting with custom domain support
+-   **Frontend**: GitLab Pages with production-optimized Angular build
+-   **Backend**: AWS EC2 instance with PM2 process management
+-   **Database**: MongoDB Atlas cloud cluster
+-   **Monitoring**: AWS CloudWatch for performance tracking and logs
+-   **CI/CD**: Automated testing and deployment via GitLab pipelines
 
-### Server Deployment
-
--   **Platform**: AWS EC2 (Elastic Cloud Compute)
--   **Process Manager**: PM2 for Node.js process management
--   **Database**: MongoDB Atlas (cloud-hosted)
--   **Monitoring**: CloudWatch integration for logs and metrics
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
-
----
-
-## 🤝 Contributing
-
-This project was developed following academic software engineering standards:
+### Development Practices
 
 -   Code reviews for all changes
--   Test-driven development approach
--   Documentation for all public APIs
--   Adherence to SOLID principles
--   Continuous integration validation
+-   Test-driven development with 95%+ coverage
+-   Automated linting and formatting checks
+-   Continuous integration with automated testing
+-   Adherence to SOLID principles and design patterns
 
 ---
 

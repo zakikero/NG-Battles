@@ -1,12 +1,12 @@
-# Serveur NestJS
+# NestJS Server
 
-Ce projet est une implémentation du serveur de départ utilisant le cadriciel [NestJS](https://nestjs.com/). Ceci est une alternative à serveur de base qui vous est fournie et qui utilise NodeJS/Express. Vous pouvez utiliser le serveur NodeJS/Express fourni ou ce serveur pour votre projet.
+This project is an implementation of the starting server using the [NestJS](https://nestjs.com/) framework. This is an alternative to the basic server provided that uses NodeJS/Express. You can use either the provided NodeJS/Express server or this server for your project.
 
 ## NestJS
 
-NestJS est un cadriciel de développement de serveurs dynamiques utilisant NodeJS et Expess avec une architecture très similaire à celle d'Angular. Vous remarquerez l'utilisation de termes tels que `service`,`module` et autres similaires à Angular.
+NestJS is a framework for developing dynamic servers using NodeJS and Express with an architecture very similar to Angular. You will notice the use of terms such as `service`, `module`, and others similar to Angular.
 
-NestJS utilise des décorateurs (annotations avec le symbole `@`) pour attacher des fonctionnalités supplémentaires au code. Par exemple, la configuration d'un gestionnaire de route en NestJS :
+NestJS uses decorators (annotations with the `@` symbol) to attach additional functionality to the code. For example, configuring a route handler in NestJS:
 
 ```ts
 @Get('/')
@@ -17,7 +17,7 @@ dateInfo(): Message {
 }
 ```
 
-est équivalente à la configuration suivante avec Express :
+is equivalent to the following configuration with Express:
 
 ```ts
 this.router.get('/', (req: Request, res: Response) => {
@@ -27,45 +27,45 @@ this.router.get('/', (req: Request, res: Response) => {
 });
 ```
 
-## Intégration avec les autres exemples du cours
+## Integration with Course Examples
 
-Afin de vous aider, ce projet inclut également le code nécessaire pour présenter les fonctionnalités de communication avec une base de données `MongoDB` et la communication avec `SocketIO`. Le code se base sur les projets suivants disponibles sur GitLab :
+To help you, this project also includes the necessary code to present communication features with a `MongoDB` database and communication with `SocketIO`. The code is based on the following projects available on GitLab:
 
--   [`MongoDB`](https://gitlab.com/nikolayradoev/mongodb-example) : la route `/api/docs` du serveur NodeJS offre une interface qui vous permet de tester la connexion avec la base de données. Notez que NestJS utilise la librairie `Mongoose` pour la communication avec MongoDB.
+-   [`MongoDB`](https://gitlab.com/nikolayradoev/mongodb-example): the `/api/docs` route of the NodeJS server offers an interface that allows you to test the connection with the database. Note that NestJS uses the `Mongoose` library for communication with MongoDB.
 
-    **Important**: vous devez configurer la variable d'environnement `DATABASE_CONNECTION_STRING` disponible dans le fichier `.env` avant de pouvoir vous connecter à une base de données.
+    **Important**: you must configure the `DATABASE_CONNECTION_STRING` environment variable available in the `.env` file before you can connect to a database.
 
--   [`SocketIO`](https://gitlab.com/nikolayradoev/socket-io-exemple) : vous pouvez utiliser le site web (client) de cet exemple pour tester la communication par WebSocket avec le serveur NestJS. Notez que cet exemple assume que le serveur est disponible sur le port `5000` : vous devez modifier l'URI de vos requêtes.
+-   [`SocketIO`](https://gitlab.com/nikolayradoev/socket-io-exemple): you can use the website (client) from this example to test WebSocket communication with the NestJS server. Note that this example assumes the server is available on port `5000`: you must modify the URI of your requests.
 
-NestJS utilise la librairie `Jest` pour ses tests. L'ensemble du code qui est fourni est déjà testé avec plusieurs exemples de tests unitaires. Vous pouvez vous baser sur ces exemples pour tester vos propres fonctionnalités.
+NestJS uses the `Jest` library for its tests. All the provided code is already tested with several unit test examples. You can base your own feature tests on these examples.
 
-# Choix de serveur à utiliser
+# Server Choice
 
-Vous devez choisir le serveur à utiliser dans votre projet : NodeJS/Express de base ou NestJS. Dans les deux cas, vous devez apporter quelques changements à votre entrepôt.
+You must choose the server to use in your project: basic NodeJS/Express or NestJS. In both cases, you must make some changes to your repository.
 
-Notez que les configurations pour le déploiement et le pipeline de validation assument qu'il a seulement un répertoire `/server` dans votre entrepôt. Peu importe votre choix, le répertoire de votre serveur doit porter ce nom.
+Note that the configurations for deployment and the validation pipeline assume there is only one `/server` directory in your repository. Regardless of your choice, your server directory must have this name.
 
-### Serveur NodeJS de base
+### Basic NodeJS Server
 
-Si vous avez décidé de garder le serveur NodeJS de base, vous n'avez qu'à supprimer le répertoire `/server-nestjs` et pousser vos changements sur Git.
+If you have decided to keep the basic NodeJS server, you only need to delete the `/server-nestjs` directory and push your changes to Git.
 
-**Note : il est important de retirer le répertoire du serveur non utilisé pour ne pas avoir du _code mort_ qui n'est jamais utilisé dans votre entrepôt.**
+**Note: it is important to remove the unused server directory to avoid having _dead code_ that is never used in your repository.**
 
-### Serveur NestJS
+### NestJS Server
 
-Si vous avez décidé de prendre le serveur NestJS, vous devez :
+If you have decided to use the NestJS server, you must:
 
-- Supprimer le répertoire `/server` et renommer `/server-nestjs` à `/server`.
-- Modifier la valeur du champ `entryFile` pour `server/app/index` dans le fichier `nest-cli.json`.
-- Modifier la valeur du champ `@app` à `out/server/app` dans le fichier `/server/package.json`.
+- Delete the `/server` directory and rename `/server-nestjs` to `/server`.
+- Modify the `entryFile` field value to `server/app/index` in the `nest-cli.json` file.
+- Modify the `@app` field value to `out/server/app` in the `/server/package.json` file.
 
-N'oubliez pas de pousser vos changements sur Git.
+Don't forget to push your changes to Git.
 
-**Note : il est important de retirer le répertoire du serveur non utilisé pour ne pas avoir du _code mort_ qui n'est jamais utilisé dans votre entrepôt.**
+**Note: it is important to remove the unused server directory to avoid having _dead code_ that is never used in your repository.**
 
-### Serveur NestJS sans base de données
+### NestJS Server without Database
 
-Si vous voulez débuter avec le serveur NestJS sans une connexion à une instance MongoDB configurée, vous devez modifier le fichier [app.module.ts](./app/app.module.ts) et retirer les références à `MongooseModule`, `CourseController` et `CourseService`. Votre configuration devraient être la suivante :
+If you want to start with the NestJS server without a configured MongoDB instance connection, you must modify the [app.module.ts](./app/app.module.ts) file and remove references to `MongooseModule`, `CourseController`, and `CourseService`. Your configuration should be as follows:
 
 ```ts
 @Module({
@@ -78,4 +78,4 @@ Si vous voulez débuter avec le serveur NestJS sans une connexion à une instanc
 export class AppModule {}
 ```
 
-**Note : l'utilisation de MongoDB sera éventuellement requise dans le projet. Il est recommandé de simplement mettre la configuration de `MongooseModule` en commentaire et retirer le contrôleur et le service d'exemple. Lorsque vous avez besoin de la base de données, vous pouvez simplement réactiver la configuration.**
+**Note: the use of MongoDB will eventually be required in the project. It is recommended to simply comment out the `MongooseModule` configuration and remove the example controller and service. When you need the database, you can simply reactivate the configuration.**

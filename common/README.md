@@ -1,9 +1,9 @@
-# Dossier common
+# Common Folder
 
-Ce dossier `common` devrait seulement être utilisé pour des interfaces partagées entre le client et le server, et non pour de la logique d'application.
+This `common` folder should only be used for interfaces shared between the client and server, and not for application logic.
 
-Raison :
+Reason:
 
-> Un service au terme Angular du terme (client) est différent d’un service au sens typedi/nestjs (serveur). En prenant en compte que chaque projet compilera chaque fichier, on ne vous conseille pas de mettre de logique dans ce dossier. Des constantes c’est passable.
+> A service in Angular terms (client) is different from a service in the typedi/nestjs sense (server). Taking into account that each project will compile each file, we do not recommend putting logic in this folder. Constants are acceptable.
 >
-> Un problème de mettre la logique dans le common c’est les tests. Il faut aussi faire des tests standalone. Ce qui devient compliqué.
+> A problem with putting logic in common is testing. You also need to do standalone tests, which becomes complicated.

@@ -1,181 +1,181 @@
-# Guide de contribution
+# Contributing Guide
 
-Ce guide vise à établir des règles claires pour contribuer au projet. En suivant ces directives, nous assurons une collaboration efficace et maintenons la qualité de notre code.
+This guide aims to establish clear rules for contributing to the project. By following these guidelines, we ensure effective collaboration and maintain code quality.
 
-Ce document couvre les conventions de nommage des branches, les règles pour les messages de commit (`fixed stuff` n'est malheureusement pas un nom valide), le processus de Merge Request (MR), la revue de code, et d'autres bonnes pratiques essentielles pour naviguer dans notre projet sans perdre la raison.
+This document covers branch naming conventions, commit message rules (`fixed stuff` is unfortunately not a valid name), the Merge Request (MR) process, code review, and other essential best practices for navigating our project without losing your mind.
 
-## 1. Convention de nommage des branches
+## 1. Branch Naming Convention
 
-La convention de nommage des branches est essentielle pour maintenir notre projet organisé et compréhensible. Nous utilisons une approche simplifiée adaptée à notre contexte académique, tout en s'inspirant des pratiques de l'industrie.
+Branch naming convention is essential to maintain our project organized and understandable. We use a simplified approach adapted to our academic context, while drawing inspiration from industry practices.
 
-### Structure principale
+### Main Structure
 
-Nous maintenons deux branches principales :
+We maintain two main branches:
 
--   `master` ou `main` : branche principale qui contient le code stable, prêt pour la production/évaluation. On y touche avec précaution.
--   `dev` : branche de développement, intègre les nouvelles fonctionnalités. C'est ici que la magie opère (et que parfois tout explose). Les fonctionnalités devrait être stables, même si pas complètement terminées.
+-   `master` or `main`: main branch containing stable code, ready for production/evaluation. Handle with care.
+-   `dev`: development branch, integrates new features. This is where the magic happens (and sometimes everything explodes). Features should be stable, even if not completely finished.
 
-### Branches de travail
+### Working Branches
 
-Pour tout nouveau développement, créez une branche à partir de la branche appropriée en suivant cette convention :
+For any new development, create a branch from the appropriate branch following this convention:
 
-`type/description-courte`
+`type/short-description`
 
-Types de branches :
+Branch types:
 
--   `feature/` : pour les nouvelles fonctionnalités
--   `bugfix/` : pour les corrections de bugs
--   `hotfix/` : pour les correctifs urgents (généralement moins de changements que `bugfix/`)
--   `doc/` : pour les mises à jour de documentation (optionnel)
+-   `feature/`: for new features
+-   `bugfix/`: for bug fixes
+-   `hotfix/`: for urgent fixes (generally fewer changes than `bugfix/`)
+-   `doc/`: for documentation updates (optional)
 
-Exemples :
+Examples:
 
--   `feature/authentification-utilisateur`
--   `bugfix/correction-calcul-score`
--   `hotfix/correction-fuite-memoire`
--   `doc/mise-a-jour-readme`
+-   `feature/user-authentication`
+-   `bugfix/score-calculation-fix`
+-   `hotfix/memory-leak-fix`
+-   `doc/update-readme`
 
-Règles :
+Rules:
 
-1. Utilisez un séparateur cohérent entre les mots (tiret `-` ou barre oblique `/`). L'important est d'être uniforme au sein de l'équipe.
-2. Soyez concis, mais descriptif.
-3. Utilisez uniquement des lettres minuscules et des chiffres.
-4. Choisissez une langue (français ou anglais) pour les noms de branches et les messages de commit, et utilisez-la de manière cohérente.
-5. Décomposez les grosses fonctionnalités en plusieurs branches plus petites et gérables.
+1. Use a consistent separator between words (dash `-` or slash `/`). The important thing is to be uniform within the team.
+2. Be concise but descriptive.
+3. Use only lowercase letters and numbers.
+4. Choose a language (French or English) for branch names and commit messages, and use it consistently.
+5. Break down large features into several smaller, manageable branches.
 
-### Structure des branches
+### Branch Structure
 
--   Les branches `feature/` et `bugfix/` peuvent partir de `dev` ou d'une autre branche `feature/` pour les sous-fonctionnalités.
--   Les branches `hotfix/` peuvent partir de `master` ou `dev` selon l'urgence.
--   Les branches `doc/` peuvent partir de `master` ou `dev` selon le niveau de stabilité ou d'avancement de ce qui est documenté.
--   Évitez de créer plus de 2 ou 3 niveaux de profondeur dans la hiérarchie des branches.
+-   `feature/` and `bugfix/` branches can start from `dev` or another `feature/` branch for sub-features.
+-   `hotfix/` branches can start from `master` or `dev` depending on urgency.
+-   `doc/` branches can start from `master` or `dev` depending on the stability level or progress of what is documented.
+-   Avoid creating more than 2 or 3 levels of depth in the branch hierarchy.
 
-### Décomposition des grosses fonctionnalités
+### Breaking Down Large Features
 
-Il est fortement recommandé de décomposer les grosses fonctionnalités en plusieurs branches plus petites. Cela facilite la revue de code, réduit les conflits potentiels et permet une intégration plus fréquente.
+It is strongly recommended to break down large features into several smaller branches. This facilitates code review, reduces potential conflicts, and allows for more frequent integration.
 
-Exemple de décomposition d'une grosse fonctionnalité "Système de recommandation" :
+Example of breaking down a large "Recommendation System" feature:
 
--   `feature/systeme-recommandation` (branche principale de la fonctionnalité)
-    -   `feature/recommandation-collecte-donnees`
-    -   `feature/recommandation-algorithme-filtrage`
-    -   `feature/recommandation-interface-utilisateur`
+-   `feature/recommendation-system` (main feature branch)
+    -   `feature/recommendation-data-collection`
+    -   `feature/recommendation-filtering-algorithm`
+    -   `feature/recommendation-user-interface`
 
-## 2. Conventions pour les messages de commit
+## 2. Commit Message Conventions
 
-Nous suivons la convention des [Conventional Commits](https://www.conventionalcommits.org/) pour structurer nos messages de commit. Cette approche rend l'historique du projet plus lisible et facilite la génération automatique de changelogs.
+We follow the [Conventional Commits](https://www.conventionalcommits.org/) convention to structure our commit messages. This approach makes the project history more readable and facilitates automatic changelog generation.
 
-### Format de base
-
-```
-<type>(portée optionnelle): <description>
-[corps optionnel]
-```
-
-### Types de commit
-
--   `feat`: Nouvelle fonctionnalité
--   `fix`: Correction de bug
--   `docs`: Modification de la documentation
--   `style`: Changements de formatage (espaces, virgules, etc.)
--   `refactor`: Refactorisation du code
--   `test`: Ajout ou modification de tests
--   `chore`: Tâches de maintenance, mises à jour de dépendances, etc.
-
-### Exemples
+### Basic Format
 
 ```
-- feat(login): ajouter un bouton de login sur la page principale
-- fix(login): cacher le bouton de login si déjà connectés
-- docs(api): documenter l'API de la route d'authentification
-- style(css): rendre le site lisible sur plateforme mobile
-- refactor(algorithme): remplacer les ifs géants par un algorithme optimisé
-- test(performance): vérifier que l'app ne plante pas sous une forte charge
-- chore(git): mettre à jour les dépendances du projet
+<type>(optional scope): <description>
+[optional body]
 ```
 
-### Bonnes pratiques
+### Commit Types
 
--   Utilisez l'impératif présent dans la description ("ajouter" au lieu de "ajouté")
--   Séparez le sujet du corps par une ligne vide si vous incluez un corps
--   Utilisez le corps pour expliquer le "quoi" et le "pourquoi" du changement, pas le "comment"
+-   `feat`: New feature
+-   `fix`: Bug fix
+-   `docs`: Documentation modification
+-   `style`: Formatting changes (spaces, commas, etc.)
+-   `refactor`: Code refactoring
+-   `test`: Adding or modifying tests
+-   `chore`: Maintenance tasks, dependency updates, etc.
 
-Pour plus de détails, consultez [conventionalcommits.org](https://www.conventionalcommits.org/).
+### Examples
 
-## 3. Processus de Merge Request (MR)
+```
+- feat(login): add login button on main page
+- fix(login): hide login button if already connected
+- docs(api): document authentication route API
+- style(css): make site readable on mobile platform
+- refactor(algorithm): replace giant ifs with optimized algorithm
+- test(performance): verify app doesn't crash under heavy load
+- chore(git): update project dependencies
+```
 
-Les Merge Requests (MR) sont essentielles pour intégrer votre travail dans une branche ciblée (souvent `dev`). Suivez ces étapes pour créer et gérer efficacement vos MR.
+### Best Practices
 
-### Création d'une MR
+-   Use present imperative in the description ("add" instead of "added")
+-   Separate subject from body with a blank line if you include a body
+-   Use the body to explain the "what" and "why" of the change, not the "how"
 
-1. Assurez-vous que votre branche est à jour avec la dernière version de la branche cible.
-2. Poussez votre branche vers le dépôt distant. **Astuce**: Si vous utilisez le terminal pour pousser votre branche, GitLab vous fournira automatiquement l'URL pour créer une Merge Request.
-3. Dans GitLab, créez une nouvelle Merge Request depuis votre branche vers la branche cible.
+For more details, see [conventionalcommits.org](https://www.conventionalcommits.org/).
 
-### Contenu de la MR
+## 3. Merge Request (MR) Process
 
-Votre MR doit inclure :
+Merge Requests (MR) are essential for integrating your work into a target branch (often `dev`). Follow these steps to create and manage your MRs effectively.
 
--   Un titre clair et descriptif, suivant la même convention que nos messages de commit (Conventional Commits).
--   Une description détaillant :
-    -   Le but de la MR
-    -   Les changements principaux (la liste des tâches accomplis ou modifications apportées)
-    -   Tout impact potentiel sur d'autres parties du projet
--   (Optionnel) Des labels appropriés (ex: "feature", "bugfix", "documentation")
--   Une personne assignée à la revue de votre contribution (peut être plusieurs personnes)
+### Creating an MR
 
-### Bonnes pratiques
+1. Ensure your branch is up to date with the latest version of the target branch.
+2. Push your branch to the remote repository. **Tip**: If you use the terminal to push your branch, GitLab will automatically provide you with the URL to create a Merge Request.
+3. In GitLab, create a new Merge Request from your branch to the target branch.
 
--   Gardez vos MR de taille raisonnable (idéalement < 400 lignes modifiées)
--   Résolvez les conflits avant de demander une revue
--   Répondez rapidement aux commentaires et suggestions
--   Mettez à jour votre MR si des changements sont demandés
--   Évitez d'ouvrir une MR trop tôt dans l'étape de développement
+### MR Content
 
-### Processus d'approbation
+Your MR should include:
 
-1. Au moins un autre membre de l'équipe doit approuver la MR
-2. Tous les commentaires doivent être résolus avant la fusion
-3. Les tests CI doivent passer avec succès
-4. Une fois approuvée, vous pouvez procéder à la fusion.
-5. (Optionnel) Vous pouvez compacter (`squash`) tous les commits en un seul et supprimer la branche source. Attention à cette combinaison puisque vous risquez de perdre de l'historique de vos changements.
+-   A clear and descriptive title, following the same convention as our commit messages (Conventional Commits).
+-   A description detailing:
+    -   The purpose of the MR
+    -   Main changes (list of tasks accomplished or modifications made)
+    -   Any potential impact on other parts of the project
+-   (Optional) Appropriate labels (e.g., "feature", "bugfix", "documentation")
+-   A person assigned to review your contribution (can be multiple people)
 
-**Note** : N'hésitez pas à demander de l'aide si vous rencontrez des difficultés pendant ce processus.
+### Best Practices
 
-## 4. Revue de code et approbation des MR
+-   Keep your MRs reasonably sized (ideally < 400 lines modified)
+-   Resolve conflicts before requesting a review
+-   Respond quickly to comments and suggestions
+-   Update your MR if changes are requested
+-   Avoid opening an MR too early in the development stage
 
-La revue de code est cruciale pour maintenir la qualité du code et partager les connaissances au sein de l'équipe.
+### Approval Process
 
-### Critères de revue
+1. At least one other team member must approve the MR
+2. All comments must be resolved before merging
+3. CI tests must pass successfully
+4. Once approved, you can proceed with the merge
+5. (Optional) You can squash all commits into one and delete the source branch. Be careful with this combination as you risk losing your change history.
 
-Lors de la revue, vérifiez les points suivants :
+**Note**: Don't hesitate to ask for help if you encounter difficulties during this process.
 
--   Fonctionnalité : Le code fait-il ce qu'il est censé faire ?
--   Lisibilité : Le code est-il facile à comprendre ?
--   Style : Le code suit-il nos conventions de style ?
--   Tests : Y a-t-il des tests appropriés pour les nouvelles fonctionnalités/corrections ?
+## 4. Code Review and MR Approval
 
-### Test local des changements
+Code review is crucial for maintaining code quality and sharing knowledge within the team.
 
-**Important** : Ne vous limitez pas à lire le code. Testez toujours les changements localement :
+### Review Criteria
 
-1. Récupérez la branche de la MR sur votre machine locale.
-2. Installez les dépendances nécessaires et compilez le projet si nécessaire.
-3. Testez manuellement les fonctionnalités nouvelles ou modifiées.
-4. Assurez-vous que les performances des modifications sont adéquates et ne dégradent pas l'expérience utilisateur.
-5. Vérifiez que les changements n'introduisent pas de régressions.
+During review, check the following points:
 
-### Bonnes pratiques
+-   Functionality: Does the code do what it's supposed to do?
+-   Readability: Is the code easy to understand?
+-   Style: Does the code follow our style conventions?
+-   Tests: Are there appropriate tests for new features/fixes?
 
--   Soyez respectueux et constructif dans vos commentaires. Rappelez-vous, derrière chaque ligne de code se cache un membre de l'équipe.
--   Expliquez le "pourquoi" derrière vos suggestions.
--   N'hésitez pas à demander des clarifications."C'est de la magie" n'est pas une documentation suffisante.
--   Félicitez les bonnes pratiques et les solutions innovantes.
+### Local Testing of Changes
+
+**Important**: Don't just read the code. Always test changes locally:
+
+1. Fetch the MR branch on your local machine.
+2. Install necessary dependencies and compile the project if needed.
+3. Manually test new or modified features.
+4. Ensure that the modifications perform adequately and don't degrade user experience.
+5. Verify that changes don't introduce regressions.
+
+### Best Practices
+
+-   Be respectful and constructive in your comments. Remember, behind every line of code is a team member.
+-   Explain the "why" behind your suggestions.
+-   Don't hesitate to ask for clarifications. "It's magic" is not sufficient documentation.
+-   Praise good practices and innovative solutions.
 
 ## Conclusion
 
-Ce guide de contribution est conçu pour faciliter notre collaboration et maintenir la qualité de notre projet. En suivant ces directives, nous créons un environnement de développement efficace, cohérent et moins chaotique.
+This contribution guide is designed to facilitate our collaboration and maintain the quality of our project. By following these guidelines, we create an effective, consistent, and less chaotic development environment.
 
-N'oubliez pas que ces lignes directrices sont là pour nous aider, pas pour nous limiter. Si vous avez des suggestions d'amélioration pour ce guide, n'hésitez pas à en discuter avec l'équipe.
+Remember that these guidelines are here to help us, not to limit us. If you have suggestions for improving this guide, feel free to discuss them with the team.
 
-Bon développement à tou.te.s ! 🚀
+Happy coding! 🚀
